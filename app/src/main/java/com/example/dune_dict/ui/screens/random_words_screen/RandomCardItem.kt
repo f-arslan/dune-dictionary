@@ -1,27 +1,35 @@
-package com.example.dune_dict.ui.screens.dict_all_words
+package com.example.dune_dict.ui.screens.random_words_screen
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ThumbUp
+import androidx.compose.material.icons.rounded.StarOutline
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import com.example.dune_dict.ui.theme.DunedictTheme
+import androidx.navigation.NavController
+import com.example.dune_dict.Screens
+import com.example.dune_dict.data.models.Word
+import com.example.dune_dict.util.Constants.MEDIUM_HIGH_PADDING
+import com.example.dune_dict.util.Constants.SMALL_MEDIUM_PADDING
+import com.example.dune_dict.util.Constants.SMALL_PADDING
 
 @Composable
-fun DuneCardItem(
+fun RandomCardItem(
     modifier: Modifier = Modifier,
-    dictAllWordsViewModel: DictAllWordsViewModel
+    navController: NavController,
+    word: Word
 ) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(8.dp),
-        elevation = 8.dp
+            .padding(SMALL_MEDIUM_PADDING)
+            .clickable {
+                navController.navigate(Screens.DetailWordScreen.passId(word.id))
+            },
+        elevation = SMALL_PADDING
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -29,19 +37,19 @@ fun DuneCardItem(
 
             Column(
                 modifier = Modifier
-                    .padding(8.dp)
+                    .padding(MEDIUM_HIGH_PADDING)
                     .weight(1f)
             ) {
                 Text(
                     style = MaterialTheme.typography.body1,
-                    text = "hello",
+                    text = word.term,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
                 )
-                Spacer(modifier = Modifier.height(4.dp))
+                Spacer(modifier = Modifier.height(SMALL_PADDING))
                 Text(
                     style = MaterialTheme.typography.body2,
-                    text = "Description",
+                    text = word.definition,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
                 )
@@ -50,20 +58,10 @@ fun DuneCardItem(
                 onClick = {}
             ) {
                 Icon(
-                    imageVector = Icons.Outlined.ThumbUp, // It will be handled
+                    imageVector = Icons.Rounded.StarOutline,
                     contentDescription = null
                 )
             }
         }
-    }
-
-}
-
-
-@Preview(showBackground = true)
-@Composable
-fun AllWordsScreenPreview() {
-    DunedictTheme {
-        // DuneCardItem()
     }
 }

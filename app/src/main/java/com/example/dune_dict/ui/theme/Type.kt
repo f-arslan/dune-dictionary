@@ -24,5 +24,11 @@ val Typography = Typography(
         fontFamily = Ubuntu,
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp
+    ),
+    h6 = TextStyle(
+        fontFamily = Ubuntu,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 24.sp,
+        letterSpacing = 0.25.sp
     )
 )

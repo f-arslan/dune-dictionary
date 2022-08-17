@@ -12,5 +12,5 @@ import javax.inject.Inject
 class WordRepository @Inject constructor(
     private val wordDao: WordDao
 ) {
-    val getAllWords: Flow<List<Word>> = wordDao.getAllWords()
+    val getRandomWords: Flow<List<Word>> = wordDao.getRandomWords()
 }

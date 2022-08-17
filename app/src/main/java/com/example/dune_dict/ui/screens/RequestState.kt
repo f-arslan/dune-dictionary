@@ -1,4 +1,4 @@
-package com.example.dune_dict.ui.screens.dict_all_words
+package com.example.dune_dict.ui.screens
 
 sealed class RequestState<out T> {
     object Idle: RequestState<Nothing>()

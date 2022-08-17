@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface WordDao {
 
-    @Query("SELECT * FROM dune_dict")
-    fun getAllWords(): Flow<List<Word>>
+    @Query("SELECT * FROM dune_dict ORDER BY RANDOM() LIMIT 30")
+    fun getRandomWords(): Flow<List<Word>>
 
 }
