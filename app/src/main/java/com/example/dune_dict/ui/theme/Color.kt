@@ -6,10 +6,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.colorspace.ColorSpace
 
 val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
 val Purple700 = Color(0xFF3700B3)
 val Teal200 = Color(0xFF03DAC5)
 val DarkGray = Color(0xFF141414)
+val Gray200 = Color(0xFF304FFE)
 val WhiteLight = Color(0xFFFFFFFF)
 val WhiteMedium = Color(248, 248, 248, 255)
 val WhiteBold = Color(238, 238, 238, 255)

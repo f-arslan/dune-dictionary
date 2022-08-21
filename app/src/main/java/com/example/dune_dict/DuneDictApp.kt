@@ -7,7 +7,7 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
-import com.example.dune_dict.ui.screens.random_words_screen.top_navigation_bar.TopNavigationBar
+import com.example.dune_dict.ui.screens.top_navigation_bar.TopBar
 import com.example.dune_dict.ui.theme.DunedictTheme
 
 @Composable
@@ -20,7 +20,13 @@ fun DuneDictApp() {
             color = MaterialTheme.colors.background
         ) {
             val navController = rememberNavController()
-            DuneDictNavigation(navController = navController)
+            Scaffold(
+                topBar = {
+                    TopBar()
+                }
+            ) { paddingValues ->
+                DuneDictNavigation(navController = navController, paddingValues = paddingValues)
+            }
 
         }
     }

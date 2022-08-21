@@ -55,7 +55,7 @@ fun RandomCardItem(
                 )
             }
             IconButton(
-                onClick = {}
+                onClick = {}  // TODO: Implement after the complete detail screen.
             ) {
                 Icon(
                     imageVector = Icons.Rounded.StarOutline,

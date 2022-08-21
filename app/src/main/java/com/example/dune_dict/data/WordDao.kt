@@ -11,4 +11,7 @@ interface WordDao {
     @Query("SELECT * FROM dune_dict ORDER BY RANDOM() LIMIT 30")
     fun getRandomWords(): Flow<List<Word>>
 
+    @Query("SELECT * FROM dune_dict WHERE id = :id")
+    fun getWordById(id: Int): Flow<Word>
+
 }

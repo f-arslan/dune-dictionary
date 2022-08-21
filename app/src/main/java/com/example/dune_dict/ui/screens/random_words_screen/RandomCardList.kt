@@ -14,7 +14,7 @@ fun RandomCardList(
     modifier: Modifier = Modifier,
     navController: NavController,
     randomWords: List<Word>,
-    paddingValues: PaddingValues
+    paddingValues: PaddingValues,
 ) {
     LazyColumn(
         modifier = Modifier.padding(paddingValues)

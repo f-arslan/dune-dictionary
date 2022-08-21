@@ -1,5 +1,7 @@
 package com.example.dune_dict
 
+import android.util.Log
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -12,6 +14,7 @@ import com.example.dune_dict.ui.screens.random_words_screen.RandomWordsScreen
 @Composable
 fun DuneDictNavigation(
     navController: NavHostController,
+    paddingValues: PaddingValues,
 ) {
     NavHost(
         navController = navController,
@@ -20,7 +23,8 @@ fun DuneDictNavigation(
 
         composable(Screens.RandomWordsScreen.route) {
             RandomWordsScreen(
-                navController = navController
+                navController = navController,
+                paddingValues = paddingValues
             )
         }
 
@@ -33,6 +37,7 @@ fun DuneDictNavigation(
             )
         ) {
             val id = it.arguments?.getString(DETAIL_ARGUMENT_KEY)?.toInt()!!
+            Log.d("Navigation", id.toString())
             DetailWordScreen(
                 navController = navController,
                 wordId = id

@@ -12,7 +12,7 @@ fun RandomCardSection(
     modifier: Modifier = Modifier,
     navController: NavController,
     randomWords: RequestState<List<Word>>,
-    paddingValues: PaddingValues
+    paddingValues: PaddingValues,
 ) {
     if (randomWords is RequestState.Success) {
         RandomCardList(
