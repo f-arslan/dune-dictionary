@@ -2,8 +2,8 @@
   <library name="Gradle: androidx.room:room-ktx:2.4.3@aar">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/14d52abdd82411327f9eda2fbea358d9/transformed/room-ktx-2.4.3/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/14d52abdd82411327f9eda2fbea358d9/transformed/room-ktx-2.4.3/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/14d52abdd82411327f9eda2fbea358d9/transformed/room-ktx-2.4.3/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/14d52abdd82411327f9eda2fbea358d9/transformed/room-ktx-2.4.3/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

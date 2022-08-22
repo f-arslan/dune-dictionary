@@ -1,6 +1,7 @@
 package com.example.dune_dict.data.repos
 
 import com.example.dune_dict.data.WordDao
+import com.example.dune_dict.data.models.SearchResultWord
 import com.example.dune_dict.data.models.Word
 import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.flow.Flow
@@ -14,4 +15,7 @@ class WordRepository @Inject constructor(
     val getRandomWords: Flow<List<Word>> = wordDao.getRandomWords()
 
     fun getWordById(wordId: Int): Flow<Word> = wordDao.getWordById(wordId)
+
+    fun getWordsByQuery(query: String): Flow<List<SearchResultWord>> =
+        wordDao.getWordsByQuery("%$query%")
 }

@@ -1,5 +1,6 @@
 package com.example.dune_dict.ui.screens.random_words_screen
 
+import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.example.dune_dict.data.models.Word
 import com.example.dune_dict.data.repos.WordRepository
