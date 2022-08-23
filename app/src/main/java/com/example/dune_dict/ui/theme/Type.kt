@@ -13,6 +13,10 @@ val Ubuntu = FontFamily(
     Font(R.font.ubuntu_bold, FontWeight.Bold),
 )
 
+val Jiho = FontFamily(
+    Font(R.font.jiho, FontWeight.Bold)
+)
+
 // Set of Material typography styles to start with
 val Typography = Typography(
     body1 = TextStyle(
@@ -24,6 +28,12 @@ val Typography = Typography(
         fontFamily = Ubuntu,
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp
+    ),
+    h5 = TextStyle(
+        fontFamily = Jiho,
+        fontWeight = FontWeight.Bold,
+        fontSize = 26.sp,
+        letterSpacing = 0.25.sp
     ),
     h6 = TextStyle(
         fontFamily = Ubuntu,

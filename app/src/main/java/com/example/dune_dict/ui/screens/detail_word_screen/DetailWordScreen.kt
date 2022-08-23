@@ -37,7 +37,7 @@ fun DetailWordScreen(
 @Composable
 fun DetailWordSection(word: Word) {
     Column {
-        Text(text = word.term)
+        Text(text = word.definition)
     }
 }
 

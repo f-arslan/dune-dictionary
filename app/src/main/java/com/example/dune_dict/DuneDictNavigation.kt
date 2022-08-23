@@ -9,7 +9,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.dune_dict.ui.screens.detail_word_screen.DetailWordScreen
-import com.example.dune_dict.ui.screens.random_words_screen.RandomWordsScreen
+import com.example.dune_dict.ui.screens.home_screen.HomeScreen
+import com.example.dune_dict.ui.screens.search_screen.SearchScreen
 
 @Composable
 fun DuneDictNavigation(
@@ -18,11 +19,11 @@ fun DuneDictNavigation(
 ) {
     NavHost(
         navController = navController,
-        startDestination = Screens.RandomWordsScreen.route,
+        startDestination = Screens.HomeScreen.route,
     ) {
 
-        composable(Screens.RandomWordsScreen.route) {
-            RandomWordsScreen(
+        composable(Screens.HomeScreen.route) {
+            HomeScreen(
                 navController = navController,
                 paddingValues = paddingValues
             )
@@ -43,5 +44,14 @@ fun DuneDictNavigation(
                 wordId = id
             )
         }
+
+        composable(
+            route = Screens.SearchScreen.route,
+        ) {
+            SearchScreen(
+                navController = navController
+            )
+        }
+
     }
 }

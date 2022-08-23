@@ -1,23 +1,18 @@
 package com.example.dune_dict
 
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.AbsoluteCutCornerShape
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.FindInPage
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.rotate
-import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import com.example.dune_dict.ui.screens.bottom_navigation_bar.BottomNavigationBar
-import com.example.dune_dict.ui.screens.top_navigation_bar.TopBar
+import com.example.dune_dict.ui.screens.top_header.TopHeader
 import com.example.dune_dict.ui.theme.DunedictTheme
-import com.example.dune_dict.util.Constants.MEDIUM_PADDING
 
 @Composable
 fun DuneDictApp() {
@@ -29,29 +24,32 @@ fun DuneDictApp() {
             color = MaterialTheme.colors.background
         ) {
             val navController = rememberNavController()
+            val fabShape = AbsoluteCutCornerShape(50)
             Scaffold(
                 topBar = {
-                    TopBar()
+                    TopHeader()
                 },
                 bottomBar = {
-                   BottomNavigationBar(
-                       navController = navController
-                   )
+                    BottomNavigationBar(
+                        navController = navController
+                    )
                 },
-                floatingActionButtonPosition = FabPosition.End,
+                floatingActionButtonPosition = FabPosition.Center,
                 isFloatingActionButtonDocked = true,
                 floatingActionButton = {
                     FloatingActionButton(
-                        shape = CircleShape,
+                        shape = fabShape,
                         onClick = {
-                            // TODO: Do route
+                            navController.navigate(Screens.SearchScreen.route)
                         },
-                        modifier = Modifier.size(56.dp)
-                        ) {
+                        elevation = FloatingActionButtonDefaults.elevation(24.dp),
+                        modifier = Modifier.size(64.dp)
+                    ) {
                         Icon(
-                            imageVector = Icons.Filled.Search,
-                            contentDescription = "Fill this",
-                        ) // TODO: Update this field
+                            painter = painterResource(id = R.drawable.search),
+                            contentDescription = stringResource(id = R.string.search_button),
+                            modifier = Modifier.size(24.dp)
+                        )
                     }
                 },
             ) { paddingValues ->
