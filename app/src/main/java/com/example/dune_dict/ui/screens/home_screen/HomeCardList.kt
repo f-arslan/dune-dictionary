@@ -15,6 +15,7 @@ fun HomeCardList(
     navController: NavController,
     randomWords: List<Word>,
     paddingValues: PaddingValues,
+    updateCurrentPageTitleName: (String) -> Unit
 ) {
     LazyColumn(
         modifier = Modifier.padding(paddingValues)
@@ -27,7 +28,8 @@ fun HomeCardList(
         ) { word ->
             HomeCardItem(
                 word = word,
-                navController = navController
+                navController = navController,
+                updateCurrentPageTitleName = updateCurrentPageTitleName
             )
         }
     }

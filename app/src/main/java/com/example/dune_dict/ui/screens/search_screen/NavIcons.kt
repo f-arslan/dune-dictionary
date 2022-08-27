@@ -5,9 +5,9 @@ import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Close
-import androidx.compose.material.icons.rounded.Mic
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import com.example.dune_dict.R
@@ -31,19 +31,6 @@ fun NavCloseIcon(
     }
 }
 
-@Composable
-fun NavMicrophoneIcon(
-    modifier: Modifier = Modifier
-) {
-    IconButton(
-        onClick = {},
-    ) {
-        Icon(
-            imageVector = Icons.Rounded.Mic,
-            contentDescription = stringResource(R.string.microphone_button)
-        )
-    }
-}
 
 @Composable
 fun NavSearchIcon(
@@ -54,8 +41,10 @@ fun NavSearchIcon(
     ) {
         Icon(
             painter = painterResource(id = R.drawable.search),
-            modifier = Modifier.size(Constants.VERY_HIGH_PADDING),
+            modifier = Modifier
+                .size(Constants.VERY_HIGH_PADDING),
             contentDescription = stringResource(R.string.search_button),
+            tint = Color.Black
         )
     }
 }

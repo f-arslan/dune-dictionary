@@ -1,5 +1,6 @@
 package com.example.dune_dict.ui.screens.detail_word_screen
 
+import android.speech.tts.TextToSpeech
 import androidx.lifecycle.viewModelScope
 import com.example.dune_dict.data.models.Word
 import com.example.dune_dict.data.repos.WordRepository
@@ -19,6 +20,10 @@ class DetailWordViewModel @Inject constructor(
     var selectedWord = MutableStateFlow<RequestState<Word>>(RequestState.Idle)
         private set
 
+    var volumeButtonState = MutableStateFlow(true)
+        private set
+
+
     fun getSelectedWordById(id: Int) {
         selectedWord.value = RequestState.Idle
         viewModelScope.launch {
@@ -31,4 +36,9 @@ class DetailWordViewModel @Inject constructor(
             }
         }
     }
+
+    fun updateVolumeButtonState() {
+        volumeButtonState.value = volumeButtonState.value != true
+    }
+
 }

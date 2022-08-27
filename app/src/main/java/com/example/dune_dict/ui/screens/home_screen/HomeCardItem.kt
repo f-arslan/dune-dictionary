@@ -20,14 +20,18 @@ import com.example.dune_dict.util.Constants.SMALL_PADDING
 fun HomeCardItem(
     modifier: Modifier = Modifier,
     navController: NavController,
-    word: Word
+    word: Word,
+    updateCurrentPageTitleName: (String) -> Unit
 ) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .padding(SMALL_MEDIUM_PADDING)
             .clickable {
-                navController.navigate(Screens.DetailWordScreen.passId(word.id))
+                updateCurrentPageTitleName(word.term)
+                navController.navigate(Screens.DetailWordScreen.passId(word.id)) {
+                    launchSingleTop = true
+                }
             },
         elevation = SMALL_PADDING
     ) {

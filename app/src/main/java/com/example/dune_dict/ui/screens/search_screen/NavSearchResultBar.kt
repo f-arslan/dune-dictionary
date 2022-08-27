@@ -6,22 +6,18 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import com.example.dune_dict.Screens
 import com.example.dune_dict.data.models.SearchResultWord
 import com.example.dune_dict.ui.screens.RequestState
 import com.example.dune_dict.util.Constants.MEDIUM_PADDING
-import com.example.dune_dict.util.Constants.SMALL_PADDING
 
 @Composable
 fun NavSearchResultBar(
@@ -50,7 +46,7 @@ private fun NavSearchResultItems(
     navController: NavController
 ) {
     LazyColumn(
-        contentPadding = PaddingValues(vertical = MEDIUM_PADDING, horizontal = SMALL_PADDING)
+        contentPadding = PaddingValues(vertical = MEDIUM_PADDING, horizontal = MEDIUM_PADDING),
     ) {
         items(
             items = searchQueryList,
@@ -62,7 +58,6 @@ private fun NavSearchResultItems(
                 searchQueryItem = item,
                 navController = navController
             )
-            Divider(color = Color.LightGray)
         }
     }
 }
@@ -74,7 +69,8 @@ private fun NavSearchItem(
     navController: NavController
 ) {
     Surface(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
             .clickable {
                 navController.navigate(Screens.DetailWordScreen.passId(searchQueryItem.id))
             }

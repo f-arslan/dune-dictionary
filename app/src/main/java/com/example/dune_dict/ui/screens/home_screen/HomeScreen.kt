@@ -6,20 +6,23 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.example.dune_dict.Screens
 
 @Composable
 fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel(),
     navController: NavController,
     modifier: Modifier = Modifier,
-    paddingValues: PaddingValues
+    paddingValues: PaddingValues,
+    updateCurrentPageTitleName: (String) -> Unit
 ) {
     val homeWords = viewModel.homeWords.collectAsState()
 
         HomeCardSection(
             randomWords = homeWords.value,
             navController = navController,
-            paddingValues = paddingValues
+            paddingValues = paddingValues,
+            updateCurrentPageTitleName = updateCurrentPageTitleName
         )
 
 }

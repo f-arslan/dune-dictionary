@@ -8,36 +8,33 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.example.dune_dict.R
 
-val Ubuntu = FontFamily(
-    Font(R.font.ubuntu_regular),
-    Font(R.font.ubuntu_bold, FontWeight.Bold),
-)
-
-val Jiho = FontFamily(
-    Font(R.font.jiho, FontWeight.Bold)
+val Athiti = FontFamily(
+    Font(R.font.athiti_regular, FontWeight.Normal),
+    Font(R.font.athiti_semibold, FontWeight.SemiBold),
+    Font(R.font.athiti_bold, FontWeight.Bold),
 )
 
 // Set of Material typography styles to start with
 val Typography = Typography(
     body1 = TextStyle(
-        fontFamily = Ubuntu,
+        fontFamily = Athiti,
         fontWeight = FontWeight.Bold,
-        fontSize = 16.sp
+        fontSize = 17.sp
     ),
     body2 = TextStyle(
-        fontFamily = Ubuntu,
+        fontFamily = Athiti,
         fontWeight = FontWeight.Normal,
-        fontSize = 14.sp
+        fontSize = 14.5.sp
     ),
     h5 = TextStyle(
-        fontFamily = Jiho,
+        fontFamily = Athiti,
         fontWeight = FontWeight.Bold,
         fontSize = 26.sp,
         letterSpacing = 0.25.sp
     ),
     h6 = TextStyle(
-        fontFamily = Ubuntu,
-        fontWeight = FontWeight.SemiBold,
+        fontFamily = Athiti,
+        fontWeight = FontWeight.Normal,
         fontSize = 24.sp,
         letterSpacing = 0.25.sp
     )

@@ -1,5 +1,6 @@
 package com.example.dune_dict.ui.screens.home_screen
 
+import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.example.dune_dict.data.models.Word
 import com.example.dune_dict.data.repos.WordRepository
@@ -20,6 +21,7 @@ class HomeViewModel @Inject constructor(
 
     init {
         getRandomWords()
+        Log.d("HomeViewModel", "init")
     }
 
     private fun getRandomWords() {
