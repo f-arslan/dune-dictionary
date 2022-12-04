@@ -1,4 +1,4 @@
-package com.example.dune_dict.ui.screens.top_navigation_bar
+package com.example.dune_dict.ui.screens.search_screen
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import com.example.dune_dict.R
 import com.example.dune_dict.util.Constants
 
@@ -47,4 +48,17 @@ fun NavSearchIcon(
             tint = Color.Black
         )
     }
+}
+
+
+@Preview(showBackground = true)
+@Composable
+fun NavCloseIconPreview() {
+    NavCloseIcon(searchTextState = "test", onDeleteBeforeClose = {})
+}
+
+@Preview(showBackground = true)
+@Composable
+fun NavSearchIconPreview() {
+    NavSearchIcon()
 }

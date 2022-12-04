@@ -1,6 +1,5 @@
 package com.example.dune_dict.ui.screens.search_screen
 
-import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -16,7 +15,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
@@ -29,10 +27,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.dune_dict.R
 import com.example.dune_dict.data.models.SearchResultWord
 import com.example.dune_dict.ui.screens.RequestState
-import com.example.dune_dict.ui.screens.top_navigation_bar.NavCloseIcon
-import com.example.dune_dict.ui.screens.top_navigation_bar.NavSearchIcon
 import com.example.dune_dict.ui.theme.Bone
-import com.example.dune_dict.ui.theme.WhiteBold
 import com.example.dune_dict.util.Constants.HIGH_PADDING
 import com.example.dune_dict.util.Constants.MEDIUM_PADDING
 
